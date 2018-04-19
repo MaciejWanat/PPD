@@ -110,7 +110,7 @@ map_foldl f xs = foldl (\z y -> z ++ [(f y)]) [] xs
 
 -- Zadanie 7.
 -- a) last
-last_fold xs = foldr1 (\x y -> y) xs
+last_fold xs = foldl1 (\x y -> y) xs
 -- b) head
 head_fold xs = foldl1 (\x y -> x) xs
 -- c) max
