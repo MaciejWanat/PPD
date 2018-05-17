@@ -30,3 +30,13 @@ lubi('Piotr', X) :- sport(X) ; ksiazki(X), X\='Piotr'.
 lubi('Pawel', X) :- jarosz(X), sport(X), ksiazki(X), X\='Pawel'.
 
 przyjaciele(X,Y) :- lubi(X,Y), lubi(Y,X), X\=Y.
+
+/* Zadanie 8 */
+/*
+Polecenie select można wykorzystać aby dodać element do listy.
+Należy go użyć w następujący sposób:
+
+select(2,X,[2,3]).
+
+Powyższe polecenie doda element '2' do listy [2,3]. W efekcie zostaną zwrócone wszystkie możliwe kombinacje.
+*/
