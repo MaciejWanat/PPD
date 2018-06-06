@@ -75,3 +75,21 @@ my_sumlist([], 0).
 my_sumlist([H|T], Sum) :-
    my_sumlist(T, Rest),
    Sum is H + Rest.
+
+/* k) */
+my_numlist(X,X,[X]).
+my_numlist(X,Y,[X|L]):-
+    Y>X,
+    Z is X+1,
+    my_numlist(Z,Y,L).
+
+/* m) */
+my_msort(List,Sorted):-i_sort(List,[],Sorted).
+i_sort([],Acc,Acc).
+i_sort([H|T],Acc,Sorted):-insert(H,Acc,NAcc),i_sort(T,NAcc,Sorted).
+   
+insert(X,[Y|T],[Y|NT]):-X>Y,insert(X,T,NT).
+insert(X,[Y|T],[X,Y|T]):-X=<Y.
+insert(X,[],[X]).
+
+/* */
