@@ -92,4 +92,14 @@ insert(X,[Y|T],[Y|NT]):-X>Y,insert(X,T,NT).
 insert(X,[Y|T],[X,Y|T]):-X=<Y.
 insert(X,[],[X]).
 
-/* */
+/* Zadanie 6 */
+
+/* a) */
+intersection([], _, []).
+intersection([Head|L1tail], L2, L3) :-
+        memberchk(Head, L2),
+        !,
+        L3 = [Head|L3tail],
+        intersection(L1tail, L2, L3tail).
+intersection([_|L1tail], L2, L3) :-
+        intersection(L1tail, L2, L3).
